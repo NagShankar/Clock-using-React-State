@@ -117,4 +117,62 @@ ReactDOM.render(
 
 
 
+<!-- The constructor comes in very handy, but sometimes it’s just too much. If you aren’t planning on maintaining state in your component and aren’t binding any event handlers, you don’t need to define a constructor at all.
+
+In fact, if you don’t need state or event handlers, you probably don’t need a class-based component at all. You can save yourself a little bit of extra typing and simply use a functional component-->
+
+
+<!-- VERSION 5 -->
+
+class Tick extends React.Component{
+ <!--  sending props in constructor and calling it agian in super lets you use this.props inside "constructor", however this.props is always available for methods like render, shouldComponentUpdate etc -->
+  constructor(props){
+    super(props);
+    
+    this.state={
+      date: new Date()
+    };
+   
+  }
+ 
+  componentDidMount(){
+    this.time=setInterval(()=>{
+      this.tock()
+    },1000
+      
+    );  
+  }
+  
+  componentWillUnmount(){
+    clearInterval(this.time);
+  }
+  
+  tock(){
+  this.setState({
+    date: new Date()
+  });
+  }
+  
+  render(){
+    return(
+      <div>
+        <h1>This is example of component</h1>
+         <p>We will build clock using this</p>
+        <h3>Current time is {this.state.date.toLocaleTimeString()}</h3>
+        </div>
+    
+    );
+    
+  }
+}
+
+
+ReactDOM.render(
+  <Tick/>,
+  document.getElementById('root')
+
+)
+
+
+
 
