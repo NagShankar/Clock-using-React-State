@@ -1,0 +1,120 @@
+<!-- VERSION 1 -->
+
+
+<!-- function tick() {
+   const element = (
+     <div>
+       <h1>Hello, world!</h1>
+       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+     </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
+
+ setInterval(tick, 1000); -->
+
+
+<!-- VERSION 2 -->
+
+<!-- class Tick extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1>This is example of component</h1>
+         <p>We will build clock using this</p>
+        <h3>Current time is {new Date().toLocaleTimeString()}</h3>
+        </div>
+    
+    );
+    
+  }
+}
+
+function count(){
+
+ReactDOM.render(
+  <Tick/>,
+  document.getElementById('root')
+
+)
+}
+
+setInterval(count, 1000); -->
+
+
+
+<!-- VERSION 3 -->
+
+
+<!-- class Tick extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1>This is example of component</h1>
+         <p>We will build clock using this</p>
+        <h3>Current time is {this.props.date.toLocaleTimeString()}</h3>
+        </div>
+    
+    );
+    
+  }
+}
+
+function count(){
+
+ReactDOM.render(
+  <Tick date={new Date()}/>,
+  document.getElementById('root')
+
+)
+}
+
+setInterval(count, 1000); -->
+
+
+
+<!-- VERSION 4 -->
+
+
+<!-- class Tick extends React.Component{
+  
+  constructor(props){
+    super(props);
+    
+    this.state={
+      date: new Date()
+    }
+    
+    //console.log(this.props.date.toLocaleTimeString());
+  }
+  
+  
+  render(){
+    return(
+      <div>
+        <h1>This is example of component</h1>
+         <p>We will build clock using this</p>
+        <h3>Current time is {this.state.date.toLocaleTimeString()}</h3>
+        </div>
+    
+    );
+    
+  }
+}
+
+
+ReactDOM.render(
+  <Tick date={new Date()}/>,
+  document.getElementById('root')
+
+) -->
+
+
+
+
+
+
+
